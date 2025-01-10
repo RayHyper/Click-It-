@@ -1,30 +1,25 @@
 <template>
     <div
-      @click="toggleClick"
-      :class="{ 'bg-green-500': isClicked, 'bg-cyan-950': !isClicked }"
-      class="hover:opacity-90 w-10 h-10 rounded-md shadow-sm"
+      @click="handleClick"
+      :class="{ 'bg-green-400': isClicked, 'bg-cyan-950': !isClicked }"
+      class="hover:opacity-90 w-20 h-20 rounded-md shadow-sm"
     >
 
-    <!--     <p class="text-white">{{ index }}</p>      -->
-    
     </div>
   </template>
   
   <script setup>
-  import { defineProps, ref, onMounted } from 'vue';
- 
+  import { defineProps, defineEmits } from 'vue';
+  
   const props = defineProps({
     index: Number,
+    isClicked: Boolean
   });
-  const isClicked = ref(false);
   
-  function toggleClick(event) {
+  const emit = defineEmits(['boxClicked']);
+  
+  function handleClick(event) {
     event.preventDefault();
-    isClicked.value = true;
-   
+    emit('boxClicked', props.index);
   }
-
-
-  
   </script>
-  

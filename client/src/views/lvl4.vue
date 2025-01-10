@@ -2,7 +2,7 @@
 import { ref, computed } from 'vue';
 import Box from "../components/Box.vue";
 
-const totalBoxes = 6;
+const totalBoxes = 1008;
 const clickedBoxes = ref(new Set());
 const timerStarted = ref(false);
 const startTime = ref(null);
@@ -74,7 +74,7 @@ const bestScore = computed(() => {
         </button>
 
         <!-- Boxes Grid -->
-        <div class="flex flex-wrap gap-2">
+        <div class="flex flex-wrap gap-2 justify-center">
           <Box 
             v-for="i in totalBoxes" 
             :key="i" 

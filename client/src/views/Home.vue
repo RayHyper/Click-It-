@@ -23,6 +23,12 @@
                 </RouterLink>
                 
             </div>
+            <div>
+                <RouterLink to="/lvl4">
+                    <button class="btn btn-info text-white">Canvas</button>
+                </RouterLink>
+                
+            </div>
           </div>
     
       </div>
